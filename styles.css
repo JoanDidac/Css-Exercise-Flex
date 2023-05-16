@@ -78,11 +78,28 @@ align-items: stretch;
 .input-container {
     position: absolute;
     bottom: 50px;
-    left: 105px;
+    left: 102px;
     transform: rotate(-90deg);
     transform-origin: bottom left;
     z-index: 2;
 
 }
 
+.slider-container input {
+    -webkit-appearance: none;
+    width: 420px;
+    height: 20px;
+    background-color: rgba(18,9,9,0.6);
+    border-radius: 15px;
+}
 
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(255,255,255);
+    border: rgb(38,38,38) solid 14px ;
+    cursor:grab;
+    z-index: 3;
+}
