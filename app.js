@@ -53,3 +53,76 @@ const reverse = () => {
 
 reversePill.addEventListener('click', reverse)
 
+const addTheme = (
+    bodyBackgroundColor, 
+    strokeWidth, 
+    svgFill, 
+    opacity, 
+    lineColor, 
+    borderRadius,
+    boxBackgroundColor,
+    pillBackgroundColor
+    ) => {
+        body.style.backgroundColor = bodyBackgroundColor
+        xLetterPath.style.strokeWidth = strokeWidth
+        xLetterSVG.style.fill = svgFill || colorPalettes[paletteIndex][xLetterIndex].fill
+        xLetterSVG.style.opacity = opacity
+        xBox.style.backgroundColor = boxBackgroundColor || colorPalettes[paletteIndex][xLetterIndex].fill
+        iconPath.style.stroke = lineColor || colorPalettes[paletteIndex][rotateIconIndex].altStroke
+        iconPath.style.strokeWidth = strokeWidth
+
+        allBoxes.forEach((box, i ) => 
+        box.style.backgroundColor = boxBackgroundColor || colorPalettes[paletteIndex][i].fill
+
+        )
+        
+        allPills.forEach((pill, i) => {
+            pill.style.opacity = opacity
+            pill.style.backgroundColor = pillBackgroundColor || colorPalettes[paletteIndex][i].fill
+            pill.style.borderWidth = strokeWidth
+            pill.style.borderColor = lineColor || colorPalettes[paletteIndex][i].fill
+            pill.style.borderBlockStyle = 'solid'
+            pill.style.borderRadius = borderRadius
+
+        })
+        allHiddenPills.forEach(hiddenPill => {
+            hiddenPill.style.opacity = opacity
+            hiddenPill.style.borderWidth = strokeWidth
+            hiddenPill.style.borderColor = lineColor || colorPalettes[paletteIndex][socialFanIndex].altStroke
+            hiddenPill.style.borderRadius = borderRadius
+        })
+
+        allArrows.forEach(arrow => {
+            arrow.style.borderBlockStyle = 'solid'
+            arrow.style.borderColor = lineColor
+            arrow.style.borderWidth = '0 ' + strokeWidth + ' ' + strokeWidth + ' 0'
+            arrow.style.opacity = opacity
+        })
+    
+    }
+
+const moveSlider = () => {
+    const sliderInput = document.querySelector('#slider-input')
+    const sliderValue = sliderInput.value
+
+
+if (sliderValue == 0) {
+   //Add theme 
+   addTheme('white', '12px', null, 1 , 'rgb(38,38,38)', '100px', 'white', null)
+}
+if(sliderValue > 1 && sliderValue <= 3) {
+    //Add theme
+    addTheme('white', '2px', 'white', 0.5 , null , '75px', null, 'white')
+}
+if(sliderValue >= 4 && sliderValue <= 6) {
+    //Add theme
+}
+if(sliderValue > 7 && sliderValue < 9) {
+    //Add theme
+}
+if(sliderValue === 10 ) {
+    //Add theme
+}
+}
+
+sliderInput.addEventListener('input' , moveSlider)
