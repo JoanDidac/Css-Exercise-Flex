@@ -284,3 +284,43 @@ align-items: stretch;
         top: -20px;
     }
 }
+
+.strechable:hover {
+    flex-grow: 5;
+
+}
+
+#takeover:hover ~ #squish  {
+    min-width: 0;
+}
+
+#takeover:hover .arrow-container {
+    display: none;
+
+}
+
+.large-box:hover {
+    flex-grow: 10;
+}
+
+.large-box:hover .text-box {
+    display: block;
+}
+
+.large-box .text-box {
+    max-width: 300px;
+
+}
+
+.large-box .text-box p {
+    font: 18px;
+}
+
+.large-box .text-box a {
+    font: 18px;
+    color: rgb(196,104,0);
+}
+
+.small-box.strechable:hover .hidden {
+    display: block;
+}
