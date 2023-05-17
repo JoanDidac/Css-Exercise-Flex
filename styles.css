@@ -153,6 +153,7 @@ align-items: stretch;
 
 .left-expand-arrow{
     animation: bounceLeft 3s infinite;
+    margin-right: 60px;
 
 }
 
@@ -170,4 +171,34 @@ align-items: stretch;
     60% {
         transform:translateX(-15px) rotate(135deg);
     }
+}
+
+.right-expand-arrow {
+    animation: bounceRight 3s infinite;
+}
+
+@keyframes bounceRight {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(0) rotate(-45deg);
+    }
+    40% {
+        transform:translateX(-30px) rotate(-45deg);
+    }
+    60% {
+        transform:translateX(-15px) rotate(-45deg);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+}
+
+.logo-container img {
+    width: 100%;
 }
