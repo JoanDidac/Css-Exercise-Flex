@@ -88,6 +88,7 @@ const addTheme = (
         allHiddenPills.forEach(hiddenPill => {
             hiddenPill.style.opacity = opacity
             hiddenPill.style.borderWidth = strokeWidth
+            hiddenPill.style.backgroundColor = lineColor || colorPalettes[paletteIndex][i].fill
             hiddenPill.style.borderColor = lineColor || colorPalettes[paletteIndex][socialFanIndex].altStroke
             hiddenPill.style.borderRadius = borderRadius
         })
@@ -130,3 +131,16 @@ if(sliderValue == 10 ) {
 }
 
 sliderInput.addEventListener('input' , moveSlider)
+
+const changePalette = () => {
+    xLetterPath.classList.add('pulse')
+    if(paletteIndex >= 2) {
+        paletteIndex = 0
+    } else {
+        paletteIndex++
+    }
+    moveSlider()
+    setTimeout(() => xLetterPath.classList.remove('pulse'), 500)
+}
+
+xBox.addEventListener('click' , changePalette)
