@@ -65,6 +65,7 @@ const addTheme = (
     ) => {
         body.style.backgroundColor = bodyBackgroundColor
         xLetterPath.style.strokeWidth = strokeWidth
+        // xLetterPath.style.stroke = lineColor || colorPalettes[paletteIndex][xLetterIndex].altStroke
         xLetterSVG.style.fill = svgFill || colorPalettes[paletteIndex][xLetterIndex].fill
         xLetterSVG.style.opacity = opacity
         xBox.style.backgroundColor = boxBackgroundColor || colorPalettes[paletteIndex][xLetterIndex].fill
