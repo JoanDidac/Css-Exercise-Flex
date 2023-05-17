@@ -15,15 +15,16 @@ const iconPath = document.querySelector('#icon')
 const hiddenBox = document.querySelector('.hidden-box')
 const textBox = document.querySelector('.hidden-box .text-box')
 
-let paletteIndex = 1
+let paletteIndex = 0
 const xLetterIndex = 11
+const socialFanIndex = 1
 const rotateIconIndex = 3
 
 //Starting state
 xLetterSVG.style.fill = colorPalettes[paletteIndex][xLetterIndex].fill
 allPills.forEach((pill, i) => 
   pill.style.backgroundColor = colorPalettes[paletteIndex][i].fill)
-
+    allHiddenPills.forEach(hiddenPill => hiddenPill.style.backgroundColor = colorPalettes[paletteIndex][socialFanIndex].fill)
 
 const expand = () => {
     if (hiddenBox.clientWidth !== 0) {
