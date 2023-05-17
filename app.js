@@ -75,7 +75,7 @@ const addTheme = (
         box.style.backgroundColor = boxBackgroundColor || colorPalettes[paletteIndex][i].fill
 
         )
-        
+
         allPills.forEach((pill, i) => {
             pill.style.opacity = opacity
             pill.style.backgroundColor = pillBackgroundColor || colorPalettes[paletteIndex][i].fill
@@ -116,13 +116,17 @@ if(sliderValue > 1 && sliderValue <= 3) {
 }
 if(sliderValue >= 4 && sliderValue <= 6) {
     //Add theme
+    addTheme('white', '1px', 'white', 0.5 , null, '90px', null, 'white')
 }
 if(sliderValue > 7 && sliderValue < 9) {
     //Add theme
+    addTheme('white', '2px', 'white', 0.5 , 'rgb(38,38,38)', '50px', null, 'white')
 }
-if(sliderValue === 10 ) {
+if(sliderValue == 10 ) {
     //Add theme
+    addTheme('rgb(38,38,38)', '12px', 'white', 1 , 'black', 0 , 'transparent' , 'white')
 }
+
 }
 
 sliderInput.addEventListener('input' , moveSlider)
