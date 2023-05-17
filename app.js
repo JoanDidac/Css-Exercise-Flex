@@ -40,3 +40,4 @@ const reverse = () => {
 
 
 reversePill.addEventListener('click', reverse)
+
