@@ -17,9 +17,26 @@ const textBox = document.querySelector('.hidden-box .text-box')
 
 const expand = () => {
     if (hiddenBox.clientWidth !== 0) {
-        hiddenBox.style.width = '0px'
+        textBox.classList.add('hidden')
+        setTimeout(() => hiddenBox.style.width = '0' , 200)
+
     } else {
     hiddenBox.style.width = '1700px'
+    setTimeout(() => textBox.classList.remove('hidden'), 500)
+ }
 }
-}
+
+
 expandPill.addEventListener('click', expand)
+
+
+const reverse = () => {
+    if(boxContainer.style.flexWrap ==='wrap') {
+        boxContainer.style.flexWrap = 'wrap-reverse'
+    } else {
+        boxContainer.style.flexWrap = 'wrap'
+    }
+}
+
+
+reversePill.addEventListener('click', reverse)
